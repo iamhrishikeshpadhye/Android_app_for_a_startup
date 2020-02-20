@@ -57,14 +57,15 @@ public class ScannerActivity extends AppCompatActivity {
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
-                    @Override public void onPermissionGranted(PermissionGrantedResponse response) {}
+                    @Override public void onPermissionGranted(PermissionGrantedResponse response) {
+                        mCodeScanner.startPreview();
+                    }
                     @Override public void onPermissionDenied(PermissionDeniedResponse response) {
                         finish();
                     }
                     @Override public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {}
                 }).check();
 
-        mCodeScanner.startPreview();
     }
 
     @Override
