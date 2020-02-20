@@ -22,10 +22,10 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(SplashScreenActivity.this, ScannerActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();
             }
-        }, 5000);
+        }, 3000);
     }
 }
